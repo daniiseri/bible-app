@@ -6,7 +6,7 @@ import { ChangeEvent, useState } from "react";
 
 export function Header() {
   const searchParams = useSearchParams()
-  const [query, setQuery] = useState<string | null>(searchParams.get('query'))
+  const [query, setQuery] = useState<string>(searchParams.get('query') || '')
   const router = useRouter()
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
